@@ -3,8 +3,8 @@ var Enemy = function(x, y) {
   // Variables applied to each of our instances go here,
   // we've provided one for you to get started
   // determine the position of the enemy
-  var x = x;
-  var y = y;
+  this.x = 0;
+  this.y = 0;
 
   // The image/sprite for our enemies, this uses
   // a helper we've provided to easily load images
@@ -31,10 +31,9 @@ Enemy.prototype.render = function() {
 
 class Boy {
   constructor() {
-    // properties
     // position x & y
-    this.x = 0;
-    this.y = 0;
+    this.x = 202;
+    this.y = 385;
     // image
     this.sprite = "images/char-boy.png";
   }
@@ -49,13 +48,13 @@ class Boy {
 
   //   handleInput method (will respond to the keys pressed by the user)
   handleInput(key) {
-    if (key == "left") {
+    if (key == "left" && this.x > 0) {
       this.x -= 101;
-    } else if (key == "right") {
+    } else if (key == "right" && this.x < 404) {
       this.x += 101;
-    } else if (key == "up") {
+    } else if (key == "up" && this.y > 0) {
       this.y -= 83;
-    } else if (key == "down") {
+    } else if (key == "down" && this.y < 385) {
       this.y += 83;
     }
   }
@@ -69,9 +68,6 @@ var allEnemies = {};
 // Place the player object in a variable called player
 var player = new Boy();
 
-// Boy.prototype.render = function() {
-//   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-// };
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener("keyup", function(e) {
