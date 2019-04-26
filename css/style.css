@@ -1,3 +1,15 @@
 body {
-    text-align: center;
+  text-align: center;
+  left: 40%;
+}
+
+.gameOverDialog {
+  width: 400px;
+  text-align: center;
+  display: block;
+  top: 30%;
+}
+
+.hide {
+  display: none;
 }

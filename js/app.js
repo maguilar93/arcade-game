@@ -44,9 +44,12 @@ class Boy {
     this.y = 385;
     // image
     this.sprite = "images/char-boy.png";
+    // victory status
+    this.victory = false;
   }
-  // update method (check for collisions and winning)
+  // update method
   update() {
+    // check for collisions
     for (let enemy of allEnemies) {
       if (
         this.y === enemy.y &&
@@ -54,6 +57,10 @@ class Boy {
       ) {
         this.reset();
       }
+    }
+    // check if player won
+    if (this.y < 35) {
+      this.victory = true;
     }
   }
   // render method (will return the player's image in the new position)
