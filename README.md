@@ -17,5 +17,5 @@ If you touch the bugs, you will have to restart the game.
 
 ## Contributing
 
-*Matthew Cranford - *https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/*
-*Udacity - _https://github.com/udacity/frontend-nanodegree-arcade-game_
+- Matthew Cranford - _https://matthewcranford.com/arcade-game-walkthrough-part-6-collisions-win-conditions-and-game-resets/_
+- Udacity - _https://github.com/udacity/frontend-nanodegree-arcade-game_
