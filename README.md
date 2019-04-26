@@ -7,13 +7,10 @@
 
 ## Instructions
 
-To open the game, you simply need to open the HTML file.
-
-The goal of the game is to help the little boy to get to the river, without touching the bugs.
-
-To move the boy, you have to press on the `left`, `right`, `up` and `down` keys on your keyboard.
-
-If you touch the bugs, you will have to restart the game.
+1. To open the game, you simply need to open the HTML file.
+2. The goal of the game is to help the little boy to get to the river, without touching the bugs.
+3. To move the boy, you have to press on the `left`, `right`, `up` and `down` keys on your keyboard.
+4. If you touch the bugs, you will have to restart the game.
 
 ## Contributing
 
