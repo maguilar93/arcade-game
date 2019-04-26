@@ -1,10 +1,12 @@
 // Enemies our player must avoid
-var Enemy = function(x, y) {
+var Enemy = function(x, y, speed) {
   // Variables applied to each of our instances go here,
   // we've provided one for you to get started
   // determine the position of the enemy
-  this.x = 0;
-  this.y = 0;
+  this.x = x;
+  this.y = y + 53;
+  this.movement = 101;
+  this.speed = speed;
 
   // The image/sprite for our enemies, this uses
   // a helper we've provided to easily load images
@@ -18,6 +20,12 @@ Enemy.prototype.update = function(dt) {
   // which will ensure the game runs at the same speed for
   // all computers.
   // make the enemy walk from one side to the other of the board
+  if (this.x < this.movement * 5) {
+    this.x += this.speed * dt;
+  } else {
+    // reset position
+    this.x = -this.movement;
+  }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -37,10 +45,17 @@ class Boy {
     // image
     this.sprite = "images/char-boy.png";
   }
-  // update method (will change props x & y)
-
-  // collision?
-  // won?
+  // update method (check for collisions and winning)
+  update() {
+    for (let enemy of allEnemies) {
+      if (
+        this.y === enemy.y &&
+        (this.x < enemy.x + 20 && this.x + 40 > enemy.x)
+      ) {
+        this.reset();
+      }
+    }
+  }
   // render method (will return the player's image in the new position)
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -60,11 +75,22 @@ class Boy {
   }
 
   // reset (return player to it's original position)
+  reset() {
+    this.x = 202;
+    this.y = 385;
+  }
 }
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
-var allEnemies = {};
+var bug1 = new Enemy(-101, 0, 150);
+var bug2 = new Enemy(-101 * 3, 0, 150);
+var bug3 = new Enemy(-101, 83, 250);
+var bug4 = new Enemy(-101 * 5, 83 * 2, 200);
+var allEnemies = [];
+allEnemies.push(bug1, bug2, bug3, bug4);
+console.log(allEnemies);
+
 // Place the player object in a variable called player
 var player = new Boy();
 
